@@ -11,4 +11,8 @@ public class Idle : GAction
     public override bool PostPerform() {
         return true;
     }
+
+    private void Update() {
+        // walking aniamtion
+    }
 }

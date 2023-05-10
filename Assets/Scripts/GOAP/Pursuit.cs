@@ -5,6 +5,8 @@ using UnityEngine;
 public class Pursuit : GAction
 {
     Transform player;
+    [SerializeField] float hearingDist = 5;
+    [SerializeField] float sightDist = 10;
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -19,6 +21,18 @@ public class Pursuit : GAction
     }
 
     public override bool IsAchievable() {
-        return Vector3.Distance(player.position, transform.position) < 10;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, sightDist)) {
+            // Check if the object hit is an enemy unit.
+            if (hit.collider.gameObject.CompareTag("Player")) {
+                // The character has detected an enemy unit!
+                return true;
+            }
+        }
+        return Vector3.Distance(player.position, transform.position) < hearingDist;
+    }
+
+    private void Update() {
+        // running aniamtion
     }
 }
