@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
 using Utils;
+using Debug = UnityEngine.Debug;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -31,7 +33,11 @@ public class AudioManager : Singleton<AudioManager>
             _eventInstances.Add(instance);
         }
     }
-
+    /// <summary>
+    /// Playing sound from the player
+    /// </summary>
+    /// <param name="sound"></param>
+    /// <returns></returns>
     public EventInstance PlaySound(Sounds sound)
     {
         _eventInstances[(int)sound].start();
@@ -43,17 +49,25 @@ public class AudioManager : Singleton<AudioManager>
     public void StopSound(Sounds sound)
     {
         _eventInstances[(int)sound].stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        // _eventInstances[(int)sound].release();
+        // _eventInstances[(int)sound].release(); // releasing will kill the event
     }
-
+    /// <summary>
+    /// Playing sound from the player for one burst
+    /// </summary>
+    /// <param name="sound"></param>
     public void PlayOneShot(Sounds sound)
     {
         FMODUnity.RuntimeManager.PlayOneShot(eventReferences[(int)sound]);
     }
-
-    public void PlayOneShotAttach(Sounds sound, GameObject attach)
+    /// <summary>
+    /// Playing sound from the game object
+    /// </summary>
+    /// <param name="sound"></param>
+    /// <param name="attach"></param>
+    public EventInstance PlayOneShotAttach(Sounds sound, GameObject attach)
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(eventReferences[(int)sound], attach);
+        return _eventInstances[(int)sound];
     }
 
     public bool IsPlaying(FMOD.Studio.EventInstance instance)
@@ -85,10 +99,22 @@ public class AudioManager : Singleton<AudioManager>
         StudioEventEmitter eventEmitter = obj.GetComponent<StudioEventEmitter>();
         if (!eventEmitter)
         {
-            Debug.Log("Event Emitter is not found");
-            
+            Debug.Log($"Event Emitter is not found in game object {obj.name}");
+            return;
         }
 
         eventEmitter.Play();
+    }
+
+    public void SetParameter(string parameterName, float value, Sounds sound)
+    {
+        _eventInstances[(int)sound].setParameterByName(parameterName, value);
+    }
+
+    public float GetParameter(string parameterName, Sounds sound)
+    {
+        float value;
+        _eventInstances[(int)sound].getParameterByName(parameterName, out value);
+        return value;
     }
 }
