@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Unity.Netcode;
 
 public class MainMenu : MonoBehaviour
 {
@@ -13,12 +12,6 @@ public class MainMenu : MonoBehaviour
 		yield return new WaitForSeconds(3);
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainScene"));
-
-        if(isClient) {
-            NetworkManager.Singleton.StartClient();
-        } else {
-            NetworkManager.Singleton.StartHost();
-        }
 
         SceneManager.UnloadSceneAsync("MainMenu",UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
 	}
