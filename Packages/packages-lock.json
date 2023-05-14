@@ -32,14 +32,14 @@
       "hash": "74d999479bffae9c9334fe29facd0a5b7e3c78e2"
     },
     "com.readyplayerme.webview": {
-      "version": "https://github.com/readyplayerme/rpm-unity-sdk-webview.git#v1.1.0",
+      "version": "https://github.com/readyplayerme/rpm-unity-sdk-webview.git#v1.1.1",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.ugui": "1.0.0",
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "12e725a2a7af509bbe0280eae746bf80ef6f27d1"
+      "hash": "75ab840b2fadca1bf9dc5348fdc80aee049b0f2b"
     },
     "com.unity.animation.rigging": {
       "version": "1.1.1",
@@ -132,31 +132,6 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       }
     },
-    "com.unity.render-pipelines.high-definition": {
-      "version": "12.1.10",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.mathematics": "1.2.4",
-        "com.unity.burst": "1.8.2",
-        "com.unity.modules.video": "1.0.0",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0",
-        "com.unity.modules.terrain": "1.0.0",
-        "com.unity.render-pipelines.core": "12.1.10",
-        "com.unity.shadergraph": "12.1.10",
-        "com.unity.visualeffectgraph": "12.1.10",
-        "com.unity.render-pipelines.high-definition-config": "12.1.10"
-      }
-    },
-    "com.unity.render-pipelines.high-definition-config": {
-      "version": "12.1.10",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.render-pipelines.core": "12.1.10"
-      }
-    },
     "com.unity.render-pipelines.universal": {
       "version": "12.1.10",
       "depth": 0,
@@ -242,15 +217,6 @@
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
-      }
-    },
-    "com.unity.visualeffectgraph": {
-      "version": "12.1.10",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.shadergraph": "12.1.10",
-        "com.unity.render-pipelines.core": "12.1.10"
       }
     },
     "com.unity.visualscripting": {
