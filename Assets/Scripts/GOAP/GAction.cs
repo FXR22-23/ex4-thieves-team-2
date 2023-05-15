@@ -21,12 +21,19 @@ public abstract class GAction : MonoBehaviour
 
     public bool running = false; // are we running this action at the moment?
 
+    [HideInInspector] public bool actionComplete;
+
     public GAction() {
         preconditions = new Dictionary<string, int>();
         aftereffects = new Dictionary<string, int>();
     }
 
+    public virtual void Action() {
+        agent.SetDestination(target.transform.position);
+    }
+
     public void Awake() {
+        actionComplete = true;
         agent = this.gameObject.GetComponent<NavMeshAgent>();
 
         if (preConditions != null) {

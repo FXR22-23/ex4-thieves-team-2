@@ -12,7 +12,13 @@ public class Idle : GAction
         return true;
     }
 
-    private void Update() {
-        // walking aniamtion
+    public override void Action() {
+        StartCoroutine(Timer());
+    }
+
+    IEnumerator Timer() {
+        actionComplete = false;
+        yield return new WaitForSeconds(duration);
+        actionComplete = true;
     }
 }

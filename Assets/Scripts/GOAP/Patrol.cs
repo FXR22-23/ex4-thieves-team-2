@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pursuit : GAction
+public class Patrol : GAction
 {
     public override bool PrePerform() {
         return true;
@@ -10,9 +10,5 @@ public class Pursuit : GAction
 
     public override bool PostPerform() {
         return true;
-    }
-
-    public override bool IsAchievable() {
-        return Vector3.Distance(target.transform.position, transform.position) < 10;
     }
 }
