@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Threading;
 
 public abstract class GAction : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public abstract class GAction : MonoBehaviour
     public WorldState[] preConditions;
     public WorldState[] afterEffects;
     public NavMeshAgent agent;
+    public Animator anim;
 
     public Dictionary<string, int> preconditions; // states that can lead to this state
     public Dictionary<string, int> aftereffects; // states this state can lead into
@@ -20,8 +22,6 @@ public abstract class GAction : MonoBehaviour
     public WorldStates agentBeliefs;
 
     public bool running = false; // are we running this action at the moment?
-
-    [HideInInspector] public bool actionComplete;
 
     public GAction() {
         preconditions = new Dictionary<string, int>();
@@ -33,7 +33,7 @@ public abstract class GAction : MonoBehaviour
     }
 
     public void Awake() {
-        actionComplete = true;
+        anim = GetComponentInChildren<Animator>();
         agent = this.gameObject.GetComponent<NavMeshAgent>();
 
         if (preConditions != null) {

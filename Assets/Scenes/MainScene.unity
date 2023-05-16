@@ -155,37 +155,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90.549, z: 0}
---- !u!1 &174882630
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 174882631}
-  m_Layer: 0
-  m_Name: Patrol_Loc1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &174882631
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174882630}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30, y: 0, z: 100}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 708207985}
-  m_RootOrder: 30
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &202751523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,11 +2137,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!4 &708207985 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8535ad32152208649aa147f40fa51bfd, type: 3}
-  m_PrefabInstance: {fileID: 617500084}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1597826655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,18 +2281,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344c1abd0f7ae3047ab48f0268d7a44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Action
+  actionName: Patrol1
   cost: 1
-  target: {fileID: 174882630}
+  target: {fileID: 446891114}
   targetTag: 
-  duration: 0
+  duration: 2
   preConditions: []
   afterEffects:
   - key: Patrol1
     value: 0
   agent: {fileID: 0}
+  anim: {fileID: 0}
   running: 0
-  actionComplete: 0
+--- !u!114 &1868240395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868240388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344c1abd0f7ae3047ab48f0268d7a44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Patrol
+  cost: 1
+  target: {fileID: 1597826655}
+  targetTag: 
+  duration: 2
+  preConditions:
+  - key: Patrol3
+    value: 0
+  afterEffects:
+  - key: Patrol
+    value: 0
+  agent: {fileID: 0}
+  anim: {fileID: 0}
+  running: 0
+--- !u!114 &1868240396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868240388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344c1abd0f7ae3047ab48f0268d7a44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Patrol3
+  cost: 1
+  target: {fileID: 295465208}
+  targetTag: 
+  duration: 2
+  preConditions:
+  - key: Patrol2
+    value: 0
+  afterEffects:
+  - key: Patrol3
+    value: 0
+  agent: {fileID: 0}
+  anim: {fileID: 0}
+  running: 0
+--- !u!114 &1868240397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868240388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344c1abd0f7ae3047ab48f0268d7a44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Patrol2
+  cost: 1
+  target: {fileID: 202751523}
+  targetTag: 
+  duration: 2
+  preConditions:
+  - key: Patrol1
+    value: 0
+  afterEffects:
+  - key: Patrol2
+    value: 0
+  agent: {fileID: 0}
+  anim: {fileID: 0}
+  running: 0
 --- !u!4 &2031514778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4108604632338163180, guid: 9de5ad037e0fd314ea43a9fb04b9f451, type: 3}
@@ -2545,7 +2587,7 @@ PrefabInstance:
     - target: {fileID: 5718102463443694175, guid: 40f75ce4e9cb0e641ad9f7f8d0c807c3, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 174882630}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5718102463443694175, guid: 40f75ce4e9cb0e641ad9f7f8d0c807c3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 40f75ce4e9cb0e641ad9f7f8d0c807c3, type: 3}

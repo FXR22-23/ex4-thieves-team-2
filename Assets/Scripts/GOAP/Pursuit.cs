@@ -15,4 +15,8 @@ public class Pursuit : GAction
     public override bool IsAchievable() {
         return Vector3.Distance(target.transform.position, transform.position) < 10;
     }
+
+    private void Update() {
+        anim.SetFloat("Speed", 2);
+    }
 }

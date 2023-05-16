@@ -32,6 +32,7 @@ public class GAgent : MonoBehaviour
     bool invoked = false;
     void CompleteAction() {
         currentAction.running = false;
+        currentAction.anim.SetFloat("Speed", 0);
         currentAction.PostPerform();
         invoked = false;
     }
@@ -77,8 +78,8 @@ public class GAgent : MonoBehaviour
 
                 if (currentAction.target != null) {
                     currentAction.running = true;
-                    currentAction.agent.SetDestination(currentAction.target.transform.position);
-                    //currentAction.Action();
+                    //currentAction.agent.SetDestination(currentAction.target.transform.position);
+                    currentAction.Action();
                 }
             }
             else {
