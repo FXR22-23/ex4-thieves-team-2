@@ -27,16 +27,16 @@ public class AvatarAnimationController : MonoBehaviour
         bool isMovingForward = move.action.ReadValue<Vector2>().y > 0;
         if (isMovingForward) {
             animator.SetBool("isWalking", true);
-            animator.SetFloat("animSpeed", 1);
+            //animator.SetFloat("animSpeed", 1);
         } else {
             animator.SetBool("isWalking", true);
-            animator.SetFloat("animSpeed", -1);
+            //animator.SetFloat("animSpeed", -1);
         }
     }
 
     private void StopAnimateLegs(InputAction.CallbackContext context)
     {
         animator.SetBool("isWalking", false);
-        animator.SetFloat("animSpeed", 0);
+        //animator.SetFloat("animSpeed", 0);
     }
 }
