@@ -877,6 +877,9 @@ MonoBehaviour:
   sem: {fileID: 267146679}
   footstepSem: {fileID: 267146678}
   loseMessage: {fileID: 454787955}
+  rb: {fileID: 0}
+  nextUpdate: 1
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!1 &271935157 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3442050012370333285, guid: 8535ad32152208649aa147f40fa51bfd, type: 3}
@@ -7595,7 +7598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4108604633766232474, guid: 9de5ad037e0fd314ea43a9fb04b9f451, type: 3}
       propertyPath: m_MoveSpeed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4108604633766232478, guid: 9de5ad037e0fd314ea43a9fb04b9f451, type: 3}
       propertyPath: m_Name
