@@ -8,14 +8,28 @@ public class PlayerSoundManager : MonoBehaviour
 
     public StudioEventEmitter sem;
 
+    public StudioEventEmitter footstepSem;
+
     public GameObject loseMessage;
 
     public FMOD.Studio.EventInstance chaseMusic;
+
+    public Rigidbody rb;
+
+    public float nextUpdate = 1;
+
+
+    public Vector3 oldPos;
 
 
     void Start() {
         chaseMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Chase_BGM");
         chaseMusic.start();
+        footstepSem.Play();
+
+        oldPos = transform.position;
+
+        rb = GetComponent<Rigidbody>();
     }
 
     public void SetChaseParams(bool enemySawPlayer, bool enemyHeardPlayer) {
@@ -45,6 +59,22 @@ public class PlayerSoundManager : MonoBehaviour
         } else if (collision.gameObject.name == "Platonic") {
             TouchDiamond();
         }
+    }
+
+
+    void Update() {
+
+         if(Time.time>=nextUpdate){
+             nextUpdate=Mathf.FloorToInt(Time.time)+2;
+             if (rb.position != oldPos) {
+                footstepSem.Play();
+            }
+         }
+
+         oldPos = rb.position;
+
+        
+        
     }
 
     

@@ -825,7 +825,7 @@ MonoBehaviour:
   Event: 
   PlayEvent: 0
   StopEvent: 0
-  AllowFadeout: 1
+  AllowFadeout: 0
   TriggerOnce: 0
   Preload: 0
   Params: []
@@ -875,6 +875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sem: {fileID: 267146679}
+  footstepSem: {fileID: 267146678}
   loseMessage: {fileID: 454787955}
 --- !u!1 &271935157 stripped
 GameObject:
