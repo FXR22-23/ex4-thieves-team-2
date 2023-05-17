@@ -18,6 +18,7 @@ public class Pursuit : GAction
     }
 
     public override bool IsAchievable() {
+
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, detectionDistance)) {
             // Check if the object hit is an enemy unit.
@@ -27,6 +28,9 @@ public class Pursuit : GAction
                 return true;
             }
         }
+
+        // TODO: run:
+        // Player.PlayerSoundManager.SetChaseParams(enemySawPlayer, enemyHeardPlayer)
 
         return Vector3.Distance(target.transform.position, transform.position) < hearDistance;
     }
