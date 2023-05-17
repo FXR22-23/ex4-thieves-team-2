@@ -7739,6 +7739,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 267146664}
     - target: {fileID: 5718102463443694174, guid: 40f75ce4e9cb0e641ad9f7f8d0c807c3, type: 3}
+      propertyPath: targetSM
+      value: 
+      objectReference: {fileID: 267146680}
+    - target: {fileID: 5718102463443694174, guid: 40f75ce4e9cb0e641ad9f7f8d0c807c3, type: 3}
       propertyPath: targetTag
       value: Player
       objectReference: {fileID: 0}

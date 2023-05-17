@@ -7,6 +7,12 @@ public class Pursuit : GAction
     public float hearDistance = 15;
     public float detectionDistance = 10;
 
+    public PlayerSoundManager targetSM;
+
+
+    private bool enemySawPlayer;
+    private bool enemyHeardPlayer;
+
     public override bool PrePerform() {
         anim.SetFloat("Speed", 2);
         return true;
@@ -20,7 +26,8 @@ public class Pursuit : GAction
     public override bool IsAchievable() {
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, detectionDistance)) {
+        enemySawPlayer = Physics.Raycast(transform.position, transform.forward, out hit, detectionDistance);
+        if (enemySawPlayer) {
             // Check if the object hit is an enemy unit.
             if (hit.collider.gameObject.CompareTag("Player")) {
                 // The character has detected an enemy unit!
@@ -29,10 +36,11 @@ public class Pursuit : GAction
             }
         }
 
-        // TODO: run:
-        // Player.PlayerSoundManager.SetChaseParams(enemySawPlayer, enemyHeardPlayer)
+        enemyHeardPlayer = Vector3.Distance(target.transform.position, transform.position) < hearDistance;
 
-        return Vector3.Distance(target.transform.position, transform.position) < hearDistance;
+        targetSM.SetChaseParams(enemySawPlayer, enemyHeardPlayer);
+
+        return enemyHeardPlayer;
     }
 
     private void OnDrawGizmos() {
