@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8b5bda55-f0ae-4d12-b805-a49320b27397}">
+		<property name="name">
+			<value>TouchesTheDaimond</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7928a7ae-9c4c-4867-aad6-f6f2bc6e9698}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{cfb26919-df2a-4744-847e-870c748e337f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{cfb26919-df2a-4744-847e-870c748e337f}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

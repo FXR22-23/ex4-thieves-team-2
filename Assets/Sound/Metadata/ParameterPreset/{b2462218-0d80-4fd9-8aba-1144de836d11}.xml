@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b2462218-0d80-4fd9-8aba-1144de836d11}">
+		<property name="name">
+			<value>HeardByGuard</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7928a7ae-9c4c-4867-aad6-f6f2bc6e9698}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5e1d56e7-3e1d-4b9c-bfca-9d9e0250adcd}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5e1d56e7-3e1d-4b9c-bfca-9d9e0250adcd}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

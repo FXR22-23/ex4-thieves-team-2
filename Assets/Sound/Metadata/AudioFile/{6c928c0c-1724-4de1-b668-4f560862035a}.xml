@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{6c928c0c-1724-4de1-b668-4f560862035a}">
+		<property name="assetPath">
+			<value>Scut/תרגיל VR מסדרונות אדומים red exerciseNewScutESM_One_Shot_FX_Interface_Click_Hacker_1_Keyboard_Cyber_Mechanical_Pressed_Cm.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.47315192743764173</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5ae2664b-7551-46b1-b7aa-1d8c3655f011}</destination>
+		</relationship>
+	</object>
+</objects>

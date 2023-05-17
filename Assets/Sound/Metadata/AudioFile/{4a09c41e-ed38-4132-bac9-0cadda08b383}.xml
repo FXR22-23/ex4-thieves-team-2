@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4a09c41e-ed38-4132-bac9-0cadda08b383}">
+		<property name="assetPath">
+			<value>Scut/תרגיל VR מסדרונות אדומים red exerciseNewScutESM_Hi_Tech_Gadget_Loading_Screen_5_Machine_Map_Tech_Sci_fi_Interface_Texture_Click_Beep_Chirp_Futuristic.13.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5ae2664b-7551-46b1-b7aa-1d8c3655f011}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b27eeb69-ddae-4cec-9d55-21354d01022b}">
+		<property name="name">
+			<value>SeenByGuard</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7928a7ae-9c4c-4867-aad6-f6f2bc6e9698}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ac7bc538-f37c-4978-b1b8-f462b2d05c57}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ac7bc538-f37c-4978-b1b8-f462b2d05c57}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

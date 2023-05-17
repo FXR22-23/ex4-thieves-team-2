@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0e617ca2-57ea-4452-843e-8e97278b68ff}">
+		<property name="assetPath">
+			<value>082_SEWT_-_Bonus_-_Berlin_Haunted_Hallway_Steps_Atmos - Trimmed.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5ae2664b-7551-46b1-b7aa-1d8c3655f011}</destination>
+		</relationship>
+	</object>
+</objects>

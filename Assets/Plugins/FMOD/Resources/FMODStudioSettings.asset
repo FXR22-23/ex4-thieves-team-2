@@ -426,8 +426,9 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  sourceBankPath: 
+  sourceProjectPath: "Assets/Sound/Red Hallway Exercise \u05EA\u05E8\u05D2\u05D9\u05DC
+    \u05DE\u05E1\u05D3\u05E8\u05D5\u05DF VR.fspro"
+  sourceBankPath: Assets/Sound/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -448,7 +449,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
