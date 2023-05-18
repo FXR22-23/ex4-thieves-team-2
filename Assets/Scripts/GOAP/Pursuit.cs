@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pursuit : GAction
 {
-    public float hearDistance = 15;
+    public float hearDistance = 100;
     public float detectionDistance = 10;
 
     public PlayerSoundManager targetSM;
@@ -32,13 +32,14 @@ public class Pursuit : GAction
             if (hit.collider.gameObject.CompareTag("Player")) {
                 // The character has detected an enemy unit!
                 Debug.Log("Player detected!");
+                targetSM.SetChaseParams(true, false);
                 return true;
             }
         }
 
         enemyHeardPlayer = Vector3.Distance(target.transform.position, transform.position) < hearDistance;
 
-        targetSM.SetChaseParams(enemySawPlayer, enemyHeardPlayer);
+        targetSM.SetChaseParams(false, enemyHeardPlayer);
 
         return enemyHeardPlayer;
     }
