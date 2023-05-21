@@ -46,6 +46,7 @@ public class GAgent : MonoBehaviour
                 actionQueue = null;
                 planner = null;
                 currentAction.agent.SetDestination(player.position);
+                return;
             }
             float distToTarget = Vector3.Distance(currentAction.target.transform.position, transform.position);
             if(currentAction.agent.hasPath && distToTarget < 1) {
