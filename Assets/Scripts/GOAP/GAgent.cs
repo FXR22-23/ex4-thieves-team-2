@@ -22,8 +22,10 @@ public class GAgent : MonoBehaviour
     Queue<GAction> actionQueue;
     public GAction currentAction;
     SubGoal currentGoal;
+    Transform player;
 
     protected virtual void Start() {
+        player = GameObject.FindGameObjectWithTag ("Player").transform;
         GAction[] acts = GetComponents<GAction>();
         foreach (GAction a in acts)
             actions.Add(a);
@@ -38,6 +40,10 @@ public class GAgent : MonoBehaviour
 
     private void LateUpdate() {
         if (currentAction != null && currentAction.running) {
+            float distToPlayer = Vector3.Distance(player.position, transform.position);
+            if (currentAction.actionName != "Pursuit" && distToPlayer < 20 && distToPlayer > 1) {
+                currentAction.agent.SetDestination(player.position);
+            }
             float distToTarget = Vector3.Distance(currentAction.target.transform.position, transform.position);
             if(currentAction.agent.hasPath && distToTarget < 1) {
                 if (!invoked) {

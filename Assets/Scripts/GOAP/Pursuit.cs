@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pursuit : GAction
 {
-    public float hearDistance = 100;
+    public float hearDistance = 20;
     public float detectionDistance = 10;
 
     public PlayerSoundManager targetSM;
