@@ -68,7 +68,8 @@ public class PlayerSoundManager : MonoBehaviour
              nextUpdate=Mathf.FloorToInt(Time.time)+2;
              if (rb.position != oldPos) {
                 footstepSem.Play();
-            }
+                
+             }
          }
 
          oldPos = rb.position;
