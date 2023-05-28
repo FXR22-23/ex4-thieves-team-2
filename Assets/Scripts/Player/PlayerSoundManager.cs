@@ -18,33 +18,44 @@ public class PlayerSoundManager : MonoBehaviour
 
     public float nextUpdate = 1;
 
+    private bool hasLost;
+
 
     public Vector3 oldPos;
 
+    public FMODUnity.EventReference fmodEvent;
+
 
     void Start() {
-        chaseMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Chase_BGM");
+        chaseMusic = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        chaseMusic.setVolume(1);
         chaseMusic.start();
-        footstepSem.Play();
+        //footstepSem.Play();
 
         oldPos = transform.position;
 
         rb = GetComponent<Rigidbody>();
     }
 
-    public void SetChaseParams(bool enemySawPlayer, bool enemyHeardPlayer) {
-        if (enemyHeardPlayer) {
+    public void SetHeardPlayer(bool enemyHeardPlayer)
+    {
+        if (enemyHeardPlayer)
+        {
             chaseMusic.setParameterByName("HeardByGuard", 1f);
-        } else {
-            chaseMusic.setParameterByName("HeardByGuard", 0f);
         }
-
-        if (enemySawPlayer) {
-            chaseMusic.setParameterByName("SeenByGuard", 1f);
-        } else {
-            chaseMusic.setParameterByName("SeenByGuard", 0f);
-        }
+        
     }
+
+    public void SetSawPlayer(bool enemySawPlayer)
+    {
+        if (enemySawPlayer)
+        {
+            chaseMusic.setParameterByName("SeenByGuard", 1f);
+        }
+        
+    }
+
+    
 
 
     public void TouchDiamond() {
@@ -52,8 +63,8 @@ public class PlayerSoundManager : MonoBehaviour
     }
     
     void OnCollisionEnter(Collision collision) {
-        if(collision.gameObject.name == "Enemy") {
-            Debug.Log("colided Enemty!");
+        if(!hasLost && collision.gameObject.name == "Enemy") {
+            hasLost = true;
             sem.Play();
             loseMessage.SetActive(true);
         } else if (collision.gameObject.name == "Platonic") {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{96de0fb4-ac94-49c8-aedd-a00ff1d6e22c}">
+		<property name="assetPath">
+			<value>תרגיל VR מסדרונות אדומים red exerciseSTEPSONESHOTFF_SFXT_foley_footsteps_metal_walkway_boomy_rattle.11.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.45557823129251701</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5ae2664b-7551-46b1-b7aa-1d8c3655f011}</destination>
+		</relationship>
+	</object>
+</objects>

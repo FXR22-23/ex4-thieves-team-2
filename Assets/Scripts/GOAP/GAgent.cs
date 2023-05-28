@@ -24,6 +24,8 @@ public class GAgent : MonoBehaviour
     SubGoal currentGoal;
     Transform player;
 
+    public PlayerSoundManager targetSM;
+
     protected virtual void Start() {
         player = GameObject.FindGameObjectWithTag ("Player").transform;
         GAction[] acts = GetComponents<GAction>();
@@ -39,13 +41,15 @@ public class GAgent : MonoBehaviour
     }
 
     private void LateUpdate() {
-        Debug.Log(invoked);
+        //Debug.Log(invoked);
         if (currentAction != null && currentAction.running) {
             float distToPlayer = Vector3.Distance(player.position, transform.position);
             if (currentAction.actionName != "Pursuit" && distToPlayer < 20 && !invoked) {
                 actionQueue = null;
                 planner = null;
-                currentAction.agent.SetDestination(player.position);
+                currentAction.agent.SetDestination(player.position); // this is actually Pursuit ..
+                targetSM.SetSawPlayer(true);
+                targetSM.SetHeardPlayer(true);
                 return;
             }
             float distToTarget = Vector3.Distance(currentAction.target.transform.position, transform.position);

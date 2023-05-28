@@ -32,14 +32,14 @@ public class Pursuit : GAction
             if (hit.collider.gameObject.CompareTag("Player")) {
                 // The character has detected an enemy unit!
                 Debug.Log("Player detected!");
-                targetSM.SetChaseParams(true, false);
+                targetSM.SetSawPlayer(true);
                 return true;
             }
         }
 
         enemyHeardPlayer = Vector3.Distance(target.transform.position, transform.position) < hearDistance;
 
-        targetSM.SetChaseParams(false, enemyHeardPlayer);
+        targetSM.SetHeardPlayer(enemyHeardPlayer);
 
         return enemyHeardPlayer;
     }
