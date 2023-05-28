@@ -27,6 +27,7 @@ public class CameraSwitch : MonoBehaviour
         if (cam == CameraNames.Hallway1)
         {
             currentCam.GetComponent<CinemachineDollyCart>().m_Speed = 3;
+            currentCam.LookAt = Player;
 
         }
         currentCam.Priority = 10;
