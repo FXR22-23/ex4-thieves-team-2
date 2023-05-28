@@ -39,7 +39,6 @@ public class GAgent : MonoBehaviour
     }
 
     private void LateUpdate() {
-        Debug.Log(invoked);
         if (currentAction != null && currentAction.running) {
             float distToPlayer = Vector3.Distance(player.position, transform.position);
             if (currentAction.actionName != "Pursuit" && distToPlayer < 20 && !invoked) {
